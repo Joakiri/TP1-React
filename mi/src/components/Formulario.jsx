@@ -3,6 +3,7 @@ import React from 'react'
 export default function Formulario() {
   return (
     <>
+        <h2>Crear mi cita</h2>
         <form>
             <label>Nombre Mascota</label>
             <input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota" value="" />

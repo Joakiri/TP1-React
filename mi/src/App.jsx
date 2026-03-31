@@ -11,9 +11,17 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Header />,
-    <Formulario />,
-    <Listado/>
+    <>
+    <Header />
+    <div className="container">
+      <div className="left">
+        <Formulario />
+      </div>
+      <div className="right">
+        <Listado />
+      </div>
+    </div>
+    </>
   )
 }
 
