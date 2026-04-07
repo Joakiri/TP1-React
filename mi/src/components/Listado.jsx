@@ -1,11 +1,17 @@
 import React from 'react'
 import Cita from './Cita'
 
-export default function Listado() {
+export default function Listado({ citas = [] }) {
   return (
     <div>
         <h2>Administra tus citas</h2>
-        <Cita/>
+        {citas.length === 0 ? (
+          <p>No hay citas</p>
+        ) : (
+          citas.map(cita => (
+            <Cita key={cita.id} cita={cita} />
+          ))
+        )}
     </div>
   )
 }
