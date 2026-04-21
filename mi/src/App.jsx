@@ -1,16 +1,21 @@
-import {useState} from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
 
 function App() {
-  const [citas, setCitas] = useState([])
+  const [citas, setCitas] = useState(() => {
+    return JSON.parse(localStorage.getItem("citas")) || [];
+  });
 
+  useEffect(() => {
+    localStorage.setItem("citas", JSON.stringify(citas));
+  }, [citas]);
   return (
     <>
       <Header />
       <div className="container">
-        <div class="row">
+        <div className="row">
           <div className="one-half column">
             <Formulario setCitas={setCitas} citas={citas} />
           </div>
